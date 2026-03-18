@@ -21,7 +21,8 @@ if exist "C:\Program Files\Google\Chrome\Application\chrome.exe" (
 :: Launch AutoHotkey key blocker
 if exist "%AHK_EXE%" (
     echo Starting key blocker...
-    "%AHK_EXE%" "%AHK_SCRIPT%"
+    start "AHK" /min "%AHK_EXE%" "%AHK_SCRIPT%"
+    timeout /t 1 /nobreak >nul
     echo Key blocker started.
 ) else (
     echo WARNING: AutoHotkey not found at %AHK_EXE%

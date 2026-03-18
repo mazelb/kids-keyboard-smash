@@ -1,6 +1,13 @@
 #Requires AutoHotkey v2.0
 #SingleInstance Force
 
+; EXIT HOTKEY: Ctrl+Q closes the game and stops key blocking
+^q::{
+    Run('taskkill /f /im msedge.exe', , 'Hide')
+    Run('taskkill /f /im chrome.exe', , 'Hide')
+    ExitApp
+}
+
 ; Block Windows keys
 LWin::return
 RWin::return
